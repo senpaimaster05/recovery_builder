@@ -3,9 +3,9 @@
 # Just a basic script U can improvise lateron asper ur need xD 
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
-DEVICE=ares
-DT_LINK="https://github.com/mastersenpai05/twrp_xiaomi_ares -b android-11"
-DT_PATH=device/xiaomi/$DEVICE
+DEVICE=X689B
+DT_LINK="https://github.com/mastersenpai0405/twrp_Infinix_Hot_10s"
+DT_PATH=device/infinix/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y

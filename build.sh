@@ -1,33 +1,30 @@
-MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni"
+#!/bin/bash
+MANIFEST="https://gitlab.com/OrangeFox/sync.git"
 DEVICE=KD7
-DT_LINK="https://github.com/mastersenpai0405/recovery_device_tecno_KD7"
+DT_LINK="https://github.com/mastersenpai0405/recovery_device_tecno_KD7 -b android-10.0"
 DT_PATH=device/tecno/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y
 apt update --fix-missing
 apt install openssh-server -y
-mkdir ~/twrp && cd ~/twrp
 
-echo " ===+++ Syncing Recovery Sources +++==="
-repo init --depth=1 -u $MANIFEST
-repo sync
-repo sync
+echo " ===+++ Sync OrangeFox +++==="
+git clone $MANIFEST ~/FOX && cd ~/FOX
+./get_fox_10.sh ~/fox_10.0
+cd ~/fox_10.0
 git clone $DT_LINK $DT_PATH
 
-echo " ===+++ Building Recovery +++==="
+echo " ====+++ Building OrangeFox +++==="
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
+export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
+export LC_ALL="C"
 lunch omni_${DEVICE}-eng && mka recoveryimage
 
 # Upload zips & recovery.img
-echo " ===+++ Uploading Recovery +++==="
-version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d \" -f2)
-OUTFILE=TWRP-${version}-${DEVICE}-$(date "+%Y%m%d-%I%M").zip
-
+#echo " ===+++ Uploading Recovery +++===
 cd out/target/product/$DEVICE
-mv recovery.img ${OUTFILE%.zip}.img
-zip -r9 $OUTFILE ${OUTFILE%.zip}.img
 
-curl -sL $OUTFILE https://git.io/file-transfer | sh
+curl -sL https://git.io/file-transfer | sh
 ./transfer wet *.zip

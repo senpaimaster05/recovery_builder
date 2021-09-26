@@ -4,7 +4,7 @@
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
 DEVICE=dandelion
-DT_LINK="https://github.com/senpaimaster05/twrp_device_xiaomi_dandelion"
+DT_LINK="https://github.com/senpaimaster05/twrp_device_xiaomi_dandelion -b test"
 DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="

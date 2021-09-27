@@ -2,9 +2,9 @@
 
 # Just a basic script U can improvise lateron asper ur need xD 
 
-MANIFEST="https://github.com/mastersenpai0405/TWRP_Realme_RMX2111_7_5G -b android-11.0"
+MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
 DEVICE=RMX2111
-DT_LINK="https://github.com/mastersenpai0405/android_device_realme_RMX1941-pbrp"
+DT_LINK="https://github.com/senpaimaster05/twrp_device_xiaomi_dandelion"
 DT_PATH=device/realme/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="

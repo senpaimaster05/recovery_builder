@@ -3,9 +3,9 @@
 # Just a basic script U can improvise lateron asper ur need xD 
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
-DEVICE=RMX2111
+DEVICE=dandelion
 DT_LINK="https://github.com/senpaimaster05/twrp_device_xiaomi_dandelion"
-DT_PATH=device/realme/$DEVICE
+DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y

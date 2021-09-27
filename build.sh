@@ -3,9 +3,9 @@
 # Just a basic script U can improvise lateron asper ur need xD 
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
-DEVICE=aresin
-DT_LINK="https://github.com/mastersenpai0405/twrp_device_poco_F3_GT"
-DT_PATH=device/poco/$DEVICE
+DEVICE=X689B
+DT_LINK="https://github.com/mastersenpai0405/twrp_device_infinix_Hot_10s"
+DT_PATH=device/infinix/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y

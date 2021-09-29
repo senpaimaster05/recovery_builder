@@ -1,7 +1,7 @@
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
-DEVICE=X689B
-DT_LINK="https://github.com/mastersenpai0405/twrp_Infinix_Hot_10s"
-DT_PATH=device/infinix/$DEVICE
+DEVICE=camellia
+DT_LINK="https://github.com/mastersenpai05/twrp_device_xiaomi_camellia"
+DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y
@@ -31,4 +31,3 @@ zip -r9 $OUTFILE ${OUTFILE%.zip}.img
 
 curl -sL $OUTFILE https://git.io/file-transfer | sh
 ./transfer wet *.zip
-© 2021 GitHub, Inc.

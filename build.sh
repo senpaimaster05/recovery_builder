@@ -3,9 +3,9 @@
 # Just a basic script U can improvise lateron asper ur need xD 
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
-DEVICE=X689B
-DT_LINK="https://github.com/mastersenpai0405/twrp_device_infinix_Hot_10s"
-DT_PATH=device/infinix/$DEVICE
+DEVICE=rosemary
+DT_LINK="https://github.com/mastersenpai0405/android_device_rosemary"
+DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y
@@ -16,10 +16,12 @@ mkdir ~/twrp && cd ~/twrp
 echo " ===+++ Syncing Recovery Sources +++==="
 repo init --depth=1 -u $MANIFEST
 repo sync
-repo sync
 git clone $DT_LINK $DT_PATH
 
 echo " ===+++ Building Recovery +++==="
+cd bootable/recovery
+curl -sL https://github.com/TeamWin/android_bootable_recovery/commit/22851b9476be92b6718baf6fb51eeefa9e2e6d0b.patch | patch -R -p1
+cd -
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 lunch twrp_${DEVICE}-eng && mka bootimage

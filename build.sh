@@ -20,6 +20,9 @@ repo sync
 git clone $DT_LINK $DT_PATH
 
 echo " ===+++ Building Recovery +++==="
+cd bootable/recovery
+curl -sL https://github.com/TeamWin/android_bootable_recovery/commit/22851b9476be92b6718baf6fb51eeefa9e2e6d0b.patch | patch -R -p1
+cd -
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 lunch twrp_${DEVICE}-eng && mka bootimage

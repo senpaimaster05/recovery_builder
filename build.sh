@@ -3,9 +3,9 @@
 # Just a basic script U can improvise lateron asper ur need xD 
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
-DEVICE=chopin
-DT_LINK="https://github.com/mastersenpai0405/twrp_device_xiaomi_chopin"
-DT_PATH=device/xiaomi/$DEVICE
+DEVICE=aresin
+DT_LINK="https://github.com/mastersenpai0405/twrp_device_poco_F3_GT"
+DT_PATH=device/poco/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y

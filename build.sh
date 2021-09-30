@@ -4,7 +4,7 @@
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
 DEVICE=rosemary
-DT_LINK="https://github.com/mastersenpai0405/android_device_rosemary -b test"
+DT_LINK="https://github.com/mastersenpai0405/android_device_rosemary"
 DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="

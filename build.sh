@@ -3,8 +3,8 @@
 # Just a basic script U can improvise lateron asper ur need xD 
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
-DEVICE=chopin
-DT_LINK="https://github.com/mastersenpai0405/twrp_device_xiaomi_chopin"
+DEVICE=camellia
+DT_LINK="https://github.com/mastersenpai05/twrp_device_xiaomi_camellia"
 DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
@@ -15,7 +15,6 @@ mkdir ~/twrp && cd ~/twrp
 
 echo " ===+++ Syncing Recovery Sources +++==="
 repo init --depth=1 -u $MANIFEST
-repo sync
 repo sync
 git clone $DT_LINK $DT_PATH
 

@@ -4,7 +4,7 @@
 
 MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
 DEVICE=camellia
-DT_LINK="https://github.com/mastersenpai05/twrp_device_xiaomi_camellia"
+DT_LINK="https://github.com/mastersenpai0405/twrp_device_xiaomi_camellia"
 DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
